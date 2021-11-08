@@ -38,6 +38,9 @@ int IntToBin::x16bit_convertback(string s) {
         while(s.size() < 16) {
             s.insert(0, "0");
         }
+        if(s.size() > 16) {
+            s.erase(0, s.size() - 16);
+        }
         for (int i = 0; i < s.size(); i++)
         {
             temp.push_back(s[i] - 48);

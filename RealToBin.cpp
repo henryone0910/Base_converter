@@ -88,6 +88,9 @@ float FloatToBin::sp_floating_point_convert(string s) {
         while(s.size() < 8 * sizeof(float)) {
             s.append("0");
         }
+        if(s.size() > 32) {
+            s.erase(0, s.size()-32);
+        }
         bitset<32> bit_pat(s);
         unsigned long bit = bit_pat.to_ulong();
         float* r = (float*)&bit;
@@ -101,6 +104,9 @@ double FloatToBin::dp_floating_point_convert(string s) {
     if(isValid) {
         while(s.size() < sizeof(double)*8) {
             s.append("0");
+        }
+        if(s.size() > sizeof(double)*8) {
+            s.erase(0,s.size()-sizeof(double)*8);
         }
         bitset<64> bit_convert(s);
         ull bit_ull = bit_convert.to_ullong();
