@@ -41,7 +41,6 @@ doub:
             cout << "1. Convert real number to bin.\n";
             cout << "2. Convert bin to real number.\n";
             cout << "3. Back.\n";
-            cout << "3. Back.\n";
             cin >> choice;
             switch(choice) {
             case 1:
